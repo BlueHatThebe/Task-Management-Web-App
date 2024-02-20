@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+</html>>
     <head>
-        <title>
-            Task Management Web App
-        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+            <link rel="stylesheet" href="styles.css">
+            <title>Task Management Web App</title>
     </head>
     <body>
-|<p>  Task Management Web App</p>
-|<p>  Task Management Web App</p>
+       |<header>
+        <h1>Task Manager Web App</h1>
+    </header>
+    <main>
+        <div class="task-form">
+            <input type="text" id="task" placeholder="Enter task...">
+            <select id="priority">
+                <option value="top">Top Priority</option>
+                <option value="middle">Middle Priority</option>
+                <option value="low">Less Priority</option>
+            </select>
+            <input type="date" id="deadline">
+            <buttton id="add-task">Add Task</buttton>
+        </div>
+        <div class="task-list" id="task-list">
+        </div>
+        <script src="logic.js"></script>
+    </main>
 
     </body>
 </html>
