@@ -6,7 +6,12 @@
         <meta name="viewport" content="width=device-width, inital-scale=1.0">
             <link rel="stylesheet" href="styles.css">
             <title>Task Management Web App</title>
-    </head>
+    <style>
+        .button {
+            border: solid 1px grey;
+        }
+    </style>
+        </head>
     <body>
        |<header>
         <h1>Task Manager Web App</h1>
@@ -20,7 +25,9 @@
                 <option value="low">Less Prioritiy</option>
             </select>
             <input type="date" id="deadline">
+            <button type="button" class="button"
             <buttton id="add-task">Add Task</buttton>
+            
         </div>
         <div class="task-list" id="task-list">
         </div>
