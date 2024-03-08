@@ -15,17 +15,18 @@
         </head>
     <body>
        |<header>
-        <h1>Task Manager Web App</h1>
+        <h1>Task Management Web App</h1>
     </header>
     <main>
         
         <div class="task-form">
             <input type="text" id="task" placeholder="Enter task...">
-            <select id="priority">
-                <option value="top">Top Priority</option>
-                <option value="middle">Middle Priority</option>
-                <option value="low">Less Prioritiy</option>
-            <select>
+            <select id="status">
+                <option value="Begin">Begin</option>
+                <option value="far from done">Far From Done</option>
+                <option value="almost done">Almost Done</option>
+                <option value="done">Done</option>
+                <select>
             <input type="date" id="deadline">
             <button type="button" class="button"
             <buttton id="add-task">Add Task</buttton>
@@ -37,6 +38,7 @@
         <div id="icons"
         <i class="fa-solid fa-pen-to-square"></i>
         <i class="fa-solid fa-trash-can"></i>
+
     </main>
 
     </body>
