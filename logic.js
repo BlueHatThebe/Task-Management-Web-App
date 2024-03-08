@@ -42,7 +42,7 @@ addTaskButton.addEventListener("click", () => {
 taskList.addEventListener("click", (event) => {
   if (event.target.classList.contains("mark-done")) {
     const taskItem = event.target.parentElement;
-    taskItem.style.backgroundColor = "#f2f2f2";
+    taskItem.style.backgroundColor = "#037592";
     event.target.disabled = true;
   }
 

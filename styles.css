@@ -1,13 +1,15 @@
 body {
-    font-family: 'Franklin Gothic Medium','Arial Narrow',Arial, sans-serif;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-weight: bold;
+     font-size: large;
     margin: 0;
     padding: 0;
     background-image: url(workers-feeling-479.jpg);
 }
  
 header {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #0400ffc0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:#037592 ;
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -30,10 +32,7 @@ main {
     border: 1px solid #ddd;
     padding: 10px;
 }
- #icons{
-    float: right;
-    font-size: 30px;
- }
+ 
 #task{
     font-size: 20px;
 
@@ -47,4 +46,4 @@ main {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
- 
+
