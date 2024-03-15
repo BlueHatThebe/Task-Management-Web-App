@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, inital-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        
-            <title>Task Management Web App</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Task Management Web App</title>
+    <script src="https://kit.fontawesome.com/0825d7a5e6.js" crossorigin="anonymous"></script>
+    <script src="logic.js"></script>
     <style>
         .button {
             border: solid 1px grey;
         }
     </style>
-    <script src="https://kit.fontawesome.com/0825d7a5e6.js" crossorigin="anonymous"></script>
-    
-        </head>
-    <body>
-       |<header>
+</head>
+<body>
+    <header>
         <h1>Task Management Web App</h1>
     </header>
     <main>
-        
         <div class="task-form">
             <input type="text" id="task" placeholder="Enter task...">
+            <input type="text" id="description" placeholder="Enter description..."> <!-- New input for task description -->
             <select id="status">
                 <option value="Begin">Begin</option>
                 <option value="far from done">Far From Done</option>
                 <option value="almost done">Almost Done</option>
                 <option value="done">Done</option>
-                <select>
+            </select>
             <input type="date" id="deadline">
-            <button type="button" class="button"
-            <buttton id="add-task">Add Task</buttton>
-            
+            <button type="button" class="button" id="add-task">Add Task</button> <!-- Corrected button tag -->
         </div>
         <div class="task-list" id="task-list">
+            <!-- The task list will be populated dynamically -->
         </div>
-        <script src="logic.js"></script>
-        <div id="icons"
-       
+        <button id="delete-selected">Delete Selected</button>
     </main>
-
-    </body>
+</body>
 </html>
