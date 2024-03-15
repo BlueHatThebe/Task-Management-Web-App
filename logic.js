@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const addTaskButton = document.getElementById("add-task");
   const taskInput = document.getElementById("task");
   const descriptionInput = document.getElementById("description");
@@ -55,7 +55,52 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (event.target.classList.contains("edit-task")) {
-      // Code for editing tasks
+      const taskItem = event.target.parentElement;
+      const taskText = taskItem.querySelector('p:nth-of-type(1)').textContent.replace('Task: ', '');
+      const descriptionText = taskItem.querySelector('p:nth-of-type(2)').textContent.replace('Description: ', '');
+      const statusText = taskItem.querySelector('p:nth-of-type(3)').textContent.replace('Status: ', '');
+      const deadlineText = taskItem.querySelector('p:nth-of-type(4)').textContent.replace('Deadline: ', '');
+
+      taskInput.value = taskText;
+      descriptionInput.value = descriptionText;
+      statusInput.value = statusText;
+      deadlineInput.value = deadlineText;
+
+      const updateButton = document.createElement("button");
+      updateButton.innerText = "Update";
+      updateButton.classList.add("update-task");
+      taskItem.appendChild(updateButton);
+
+      // Disable other edit icons while in edit mode
+      const editIcons = taskList.querySelectorAll('.edit-task');
+      editIcons.forEach((icon) => {
+        icon.style.pointerEvents = "none";
+      });
+
+      updateButton.addEventListener("click", () => {
+        const updatedTask = taskInput.value;
+        const updatedDescription = descriptionInput.value;
+        const updatedStatus = statusInput.value;
+        const updatedDeadline = deadlineInput.value;
+        
+        // Update task details
+        taskItem.querySelector('p:nth-of-type(1)').textContent = `Task: ${updatedTask}`;
+        taskItem.querySelector('p:nth-of-type(2)').textContent = `Description: ${updatedDescription}`;
+        taskItem.querySelector('p:nth-of-type(3)').textContent = `Status: ${updatedStatus}`;
+        taskItem.querySelector('p:nth-of-type(4)').textContent = `Deadline: ${updatedDeadline}`;
+
+        // Remove update button and enable edit icons again
+        updateButton.remove();
+        editIcons.forEach((icon) => {
+          icon.style.pointerEvents = "auto";
+        });
+
+        // Clear input fields after update
+        taskInput.value = "";
+        descriptionInput.value = "";
+        statusInput.value = "Begin";
+        deadlineInput.value = "";
+      });
     }
 
     if (event.target.classList.contains("delete-task")) {
