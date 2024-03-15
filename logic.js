@@ -66,17 +66,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (event.target.classList.contains("task-checkbox")) {
-      deleteSelectedButton.style.display = "block"; // Display the "Delete Selected" button
+      const checkedTasks = taskList.querySelectorAll('.task input[type="checkbox"]:checked');
+      if (checkedTasks.length > 0) {
+        deleteSelectedButton.style.display = "block"; // Display the "Delete Selected" button
+      } else {
+        deleteSelectedButton.style.display = "none"; // Hide the "Delete Selected" button
+      }
     }
   });
 
   deleteSelectedButton.addEventListener("click", () => {
-    const selectedTasks = document.querySelectorAll('.task input[type="checkbox"]:checked');
+    const selectedTasks = taskList.querySelectorAll('.task input[type="checkbox"]:checked');
     selectedTasks.forEach((task) => {
       task.parentElement.remove();
     });
 
-    // Hide the "Delete Selected" button after deletion
+    // Hide checkboxes and "Delete Selected" button after deletion
+    const checkboxes = taskList.querySelectorAll('.task-checkbox');
+    checkboxes.forEach((checkbox) => {
+      checkbox.style.display = "none";
+    });
     deleteSelectedButton.style.display = "none";
   });
 });
