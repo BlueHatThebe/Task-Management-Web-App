@@ -7,8 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const taskList = document.getElementById("task-list");
   const deleteSelectedButton = document.getElementById("delete-selected");
   deleteSelectedButton.style.display = "none"; // Initially hide the "Delete Selected" button
+  taskList.style.display = "none"; // Hide the task list initially
 
   addTaskButton.addEventListener("click", () => {
+    // Show task-list when the add-task button is clicked
+    taskList.style.display = "block";
+
     const task = taskInput.value;
     const description = descriptionInput.value;
     const status = statusInput.value;
